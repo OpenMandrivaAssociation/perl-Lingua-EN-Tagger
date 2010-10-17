@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    Part-of-speech tagger for English natural language processing
 License:    GPL+ or Artistic
@@ -17,7 +17,6 @@ BuildRequires: perl(Lingua::Stem)
 BuildRequires: perl(Memoize)
 BuildRequires: perl(Memoize::ExpireLRU)
 BuildRequires: perl(Storable)
-BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
