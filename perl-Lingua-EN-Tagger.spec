@@ -1,23 +1,23 @@
 %define upstream_name    Lingua-EN-Tagger
 %define upstream_version 0.16
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	4
 
-Summary:    Part-of-speech tagger for English natural language processing
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Lingua/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Part-of-speech tagger for English natural language processing
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Lingua/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(File::Spec)
-BuildRequires: perl(HTML::Parser)
-BuildRequires: perl(Lingua::Stem)
-BuildRequires: perl(Memoize)
-BuildRequires: perl(Memoize::ExpireLRU)
-BuildRequires: perl(Storable)
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(File::Spec)
+BuildRequires:	perl(HTML::Parser)
+BuildRequires:	perl(Lingua::Stem)
+BuildRequires:	perl(Memoize)
+BuildRequires:	perl(Memoize::ExpireLRU)
+BuildRequires:	perl(Storable)
 
 %description
 The module is a probability based, corpus-trained tagger that assigns POS
@@ -34,24 +34,37 @@ set of regular expressions.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes META.yml README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Mon Apr 25 2011 Funda Wang <fwang@mandriva.org> 0.160.0-3mdv2011.0
++ Revision: 658861
+- rebuild for updated spec-helper
+
+* Sun Oct 17 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.160.0-2mdv2011.0
++ Revision: 586230
+- Usage of serialized data structures make the package arch-dependant
+
+* Tue Jul 13 2010 Jérôme Quelin <jquelin@mandriva.org> 0.160.0-1mdv2011.0
++ Revision: 552389
+- update to 0.16
+
+* Wed Apr 07 2010 Jérôme Quelin <jquelin@mandriva.org> 0.150.0-1mdv2010.1
++ Revision: 532706
+- import perl-Lingua-EN-Tagger
 
 
+* Wed Apr 07 2010 cpan2dist 0.15-1mdv
+- initial mdv release, generated with cpan2dist
