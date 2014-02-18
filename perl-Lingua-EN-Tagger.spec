@@ -1,3 +1,7 @@
+# The package contains binary files, not sure if they are really arch-dependent,
+# but let's not mark the package as 'noarch', juse say that we have no debug data here
+%define debug_package %{nil}
+
 %define upstream_name    Lingua-EN-Tagger
 %define upstream_version 0.16
 
