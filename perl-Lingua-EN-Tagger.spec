@@ -3,13 +3,14 @@
 %define debug_package %{nil}
 
 %define upstream_name    Lingua-EN-Tagger
-%define upstream_version 0.16
+%define upstream_version 0.24
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	1
 
 Summary:	Part-of-speech tagger for English natural language processing
+
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -52,23 +53,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
 
-%changelog
-* Mon Apr 25 2011 Funda Wang <fwang@mandriva.org> 0.160.0-3mdv2011.0
-+ Revision: 658861
-- rebuild for updated spec-helper
 
-* Sun Oct 17 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.160.0-2mdv2011.0
-+ Revision: 586230
-- Usage of serialized data structures make the package arch-dependant
-
-* Tue Jul 13 2010 Jérôme Quelin <jquelin@mandriva.org> 0.160.0-1mdv2011.0
-+ Revision: 552389
-- update to 0.16
-
-* Wed Apr 07 2010 Jérôme Quelin <jquelin@mandriva.org> 0.150.0-1mdv2010.1
-+ Revision: 532706
-- import perl-Lingua-EN-Tagger
-
-
-* Wed Apr 07 2010 cpan2dist 0.15-1mdv
-- initial mdv release, generated with cpan2dist
