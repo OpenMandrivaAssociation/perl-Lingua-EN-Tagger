@@ -13,7 +13,7 @@ Summary:	Part-of-speech tagger for English natural language processing
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Lingua/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
