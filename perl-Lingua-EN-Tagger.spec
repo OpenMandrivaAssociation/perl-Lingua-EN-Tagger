@@ -3,18 +3,16 @@
 %define debug_package %{nil}
 
 %define upstream_name    Lingua-EN-Tagger
-%define upstream_version 0.24
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	0.24
+Release:	4
 
 Summary:	Part-of-speech tagger for English natural language processing
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Lingua/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Lingua/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -37,7 +35,7 @@ The tagger also extracts as many nouns and noun phrases as it can, using a
 set of regular expressions.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
